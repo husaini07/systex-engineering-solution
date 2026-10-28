@@ -28,7 +28,7 @@ export const site = {
   social: [
   ] as const,
   /** Set to false to hide indicative package fees on the Services page. */
-  showIndicativeFees: true,
+  showIndicativeFees: false,
 } as const;
 
 export const nav = [
