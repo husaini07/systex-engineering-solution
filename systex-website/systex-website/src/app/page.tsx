@@ -51,7 +51,7 @@ export default function HomePage() {
               </ButtonLink>
             </div>
             <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-300">
-              {["Professional Engineer (BEM)", "Professional Technologist (MBOT)", "Member IEM"].map((c) => (
+              {["Tender & pre-contract support", "Project documentation", "Project administration"].map((c) => (
                 <li key={c} className="flex items-center gap-2">
                   <BadgeCheck className="h-4 w-4 text-gold-400" aria-hidden="true" /> {c}
                 </li>
@@ -177,8 +177,8 @@ export default function HomePage() {
         <SectionHeading
           id="why-title"
           eyebrow="Why Choose Systex"
-          title="Turn fixed overheads into flexible, project-based cost."
-          intro="Full-time technical staff are a fixed liability. Systex gives you senior engineering support that scales with your active project volume."
+          title="Flexible project-based support for your team."
+          intro="Engage agreed project management and documentation support without a permanent staffing commitment."
         />
         <div className="mt-14">
           <ReasonsGrid />
