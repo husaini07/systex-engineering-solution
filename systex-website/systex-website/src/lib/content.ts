@@ -57,7 +57,7 @@ export const serviceAreas: ServiceArea[] = [
       "Tender document compilation and submission support",
       "Technical clarification and query response drafting",
     ],
-    outcome: "Submissions that are complete, priced against a verified scope and ready on deadline.",
+    outcome: "Structured tender documents and scope review records for client verification.",
   },
   {
     id: "construction",
@@ -87,7 +87,7 @@ export const serviceAreas: ServiceArea[] = [
       "Inspection and QA/QC checklist administration",
       "Defect monitoring and rectification tracking",
     ],
-    outcome: "Faster approvals and an auditable quality record from first pour to final inspection.",
+    outcome: "Organised technical submissions and traceable QA/QC documentation.",
   },
   {
     id: "closeout",
@@ -246,12 +246,12 @@ export const reasons = [
   {
     icon: "shield",
     title: "Aligned to JKR & CIDB expectations",
-    text: "Documentation prepared in line with JKR, CIDB and consultant requirements to reduce rejection cycles.",
+    text: "Document preparation is guided by the applicable tender and contract requirements supplied for each engagement.",
   },
   {
     icon: "trending",
     title: "Stronger cash flow",
-    text: "Well-substantiated progress claims, VOs and EOTs shorten valuation disputes with the S.O. and consultants.",
+    text: "We help prepare supporting records for progress claims, variation requests and extension-of-time submissions.",
   },
   {
     icon: "scale",
@@ -261,7 +261,7 @@ export const reasons = [
   {
     icon: "badge",
     title: "Led by a Professional Engineer",
-    text: "Engagements are directed by an Ir. and Ts. with 15+ years in major Malaysian infrastructure delivery.",
+    text: "Led by a Managing Director with professional experience in Malaysian infrastructure delivery.",
   },
   {
     icon: "handshake",
