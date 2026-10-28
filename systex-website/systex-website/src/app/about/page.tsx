@@ -146,12 +146,15 @@ export default function AboutPage() {
         />
         <div className="mt-14 grid gap-10 rounded-2xl border border-ink-200 p-6 sm:p-10 grid-cols-1 lg:grid-cols-[320px_1fr]">
           <div>
-            <div
-              className="flex aspect-[4/5] items-center justify-center rounded-xl bg-gradient-to-br from-brand-800 to-brand-950"
-              role="img"
-              aria-label={`Portrait not yet provided for ${site.director.name}`}
-            >
-              <span className="font-display text-6xl font-extrabold tracking-wider text-white/90">MH</span>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-ink-100">
+              <Image
+                src="/images/IMG-20260923-WA0017.jpg"
+                alt="Portrait of the Managing Director of Systex Engineering Solutions"
+                fill
+                sizes="(min-width: 1024px) 320px, (min-width: 640px) 320px, 100vw"
+                className="object-cover object-top"
+                priority
+              />
             </div>
             <ul className="mt-6 grid grid-cols-2 gap-3">
               {credentials.map((c) => (
