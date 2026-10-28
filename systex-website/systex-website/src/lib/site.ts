@@ -26,9 +26,6 @@ export const site = {
     title: "Managing Director",
   },
   social: [
-    { label: "LinkedIn", href: "#", icon: "linkedin" },
-    { label: "Facebook", href: "#", icon: "facebook" },
-    { label: "Instagram", href: "#", icon: "instagram" },
   ] as const,
   /** Set to false to hide indicative package fees on the Services page. */
   showIndicativeFees: true,
@@ -38,7 +35,6 @@ export const nav = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Projects", href: "/projects" },
   { label: "Contact Us", href: "/contact" },
 ] as const;
 
