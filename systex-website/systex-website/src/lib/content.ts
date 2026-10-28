@@ -157,14 +157,15 @@ export const packages = [
       "Progress claim documentation",
       "QA/QC inspection checklists",
       "Method statements and material approvals",
+      "Contractual correspondence and administrative coordination",
       "VO and EOT tracking",
     ],
   },
   {
-    name: "Full PMC Turnkey",
+    name: "Integrated Project Support",
     tag: "Package 3",
     fee: "RM 5,000 – 9,500",
-    basis: "pricing basis to be agreed",
+    basis: "phased fees based on project duration and agreed scope",
     fit: "Full project life cycle",
     featured: false,
     items: [
@@ -192,16 +193,27 @@ export const alaCarte = [
       ["Monthly progress report", "RM 300 – 700", "per submission"],
       ["Progress claim preparation", "RM 300 – 700", "per submission"],
       ["VO submission", "RM 300 – 800", "per submission"],
-      ["EOT submission", "RM 500 – 1,500", "per submission"],
+      ["EOT submission", "From RM 500", "subject to claim complexity"],
     ],
   },
   {
     group: "Technical & close-out",
     rows: [
-      ["QA/QC documentation", "RM 250 – 400", "per visit"],
+      ["QA/QC report", "RM 250 – 400", "per document"],
       ["Material approval submission", "RM 250 – 400", "per document"],
-      ["Method statement", "RM 300 – 700", "per statement"],
-      ["As-built & handover dossier", "RM 800 – 2,000", "per project"],
+      ["Method statement / HIRAC", "RM 300 – 700", "per document"],
+      ["Handover dossier compilation", "RM 800 – 2,000", "per project"],
+      ["T&C documentation", "RM 400 – 800", "per trade system"],
+      ["Contractual letter & delay notice", "RM 150 – 300", "per letter"],
+    ],
+  },
+  {
+    group: "Professional administration",
+    rows: [
+      ["Business letter / executive email", "RM 50 – 150", "per letter / email"],
+      ["Meeting agenda & minutes", "RM 100 – 300", "per meeting"],
+      ["Document formatting & submission packaging", "RM 500 – 1,500", "per submission"],
+      ["Administrative coordination & follow-up", "RM 25 – 60", "per hour"],
     ],
   },
 ] as const;
@@ -332,199 +344,16 @@ export const values = [
 export const credentials = [
   { short: "Ir.", long: "Professional Engineer", body: "Board of Engineers Malaysia (BEM)" },
   { short: "Ts.", long: "Professional Technologist", body: "Malaysia Board of Technologists (MBOT)" },
-  { short: "MIEM", long: "Corporate Member", body: "The Institution of Engineers, Malaysia (IEM)" },
+  { short: "IEM", long: "Member", body: "The Institution of Engineers, Malaysia (IEM)" },
   { short: "B.Eng", long: "Electrical Engineering", body: "Universiti Teknologi Malaysia (UTM)" },
 ] as const;
 
-/* --------------------------------- Projects -------------------------------- */
-
-export const projectCategories = [
-  "All",
-  "Rail & Transit",
-  "Civil & Structural",
-  "M&E Building Services",
-  "Energy & Utilities",
+/** Individual professional history stated in the MD CV; NOT Systex project contracts. */
+export const directorExperience = [
+  { title: "East Coast Rail Link (ECRL)", role: "Senior Signalling Engineer — LRSSC (from Feb 2024)" },
+  { title: "Klang Valley Electrified Double Track Phase 2 (KVDT2)", role: "Senior Signalling Engineer — SITC (from Feb 2024)" },
+  { title: "Gemas–Johor Bahru Electrified Double Track", role: "Resident Engineer (Aug 2019 – Jan 2024)" },
+  { title: "Klang Valley Electrified Double Track Phase 1 (KVDT1)", role: "Signalling Engineer (Feb 2016 – Aug 2019)" },
+  { title: "Klang Valley MRT Line 1", role: "Signalling Design Engineer / Interface Engineer (2013 – 2015)" },
+  { title: "LRT Ampang Line Extension", role: "Senior Signalling Site Engineer / Site Design Engineer (2015 – 2016)" },
 ] as const;
-
-export type ProjectCategory = Exclude<(typeof projectCategories)[number], "All">;
-
-export type Project = {
-  slug: string;
-  title: string;
-  category: ProjectCategory;
-  kind: "experience" | "engagement";
-  role: string;
-  location: string;
-  summary: string;
-  scope: string[];
-};
-
-/**
- * kind "experience"  = leadership experience of the Managing Director in prior roles
- *                      (not contracts executed by Systex as a company).
- * kind "engagement"  = representative engagement profiles showing how Systex structures
- *                      support for each discipline. Replace / extend with completed Systex
- *                      projects as they are delivered.
- */
-export const projects: Project[] = [
-  {
-    slug: "ecrl",
-    title: "East Coast Rail Link (ECRL)",
-    category: "Rail & Transit",
-    kind: "experience",
-    role: "Senior Signalling Engineer — Local Railway System Supervision Consultant (LRSSC)",
-    location: "Peninsular Malaysia",
-    summary:
-      "National rail corridor connecting the East Coast states with the Klang Valley. Supervision of railway signalling systems on behalf of the supervision consultant.",
-    scope: [
-      "Signalling design and submission review",
-      "Site supervision and inspection of installation works",
-      "Witnessing of testing and commissioning activities",
-      "Interface coordination between system packages",
-    ],
-  },
-  {
-    slug: "kvdt2",
-    title: "Klang Valley Electrified Double Track Phase 2 (KVDT 2)",
-    category: "Rail & Transit",
-    kind: "experience",
-    role: "Senior Signalling Engineer — SITC Technical Committee (Government Consultant)",
-    location: "Klang Valley",
-    summary:
-      "Rehabilitation and upgrading of the Klang Valley double track network. Technical committee representation for the signalling Supply, Installation, Testing & Commissioning (SITC) works.",
-    scope: [
-      "Technical evaluation of signalling SITC submissions",
-      "Compliance review against specification and standards",
-      "Technical committee reporting to the government client",
-      "Progress and quality oversight of system works",
-    ],
-  },
-  {
-    slug: "gemas-jb",
-    title: "Gemas – Johor Bahru Electrified Double Track",
-    category: "Rail & Transit",
-    kind: "experience",
-    role: "Resident Engineer — Main Contractor Consultant",
-    location: "Negeri Sembilan & Johor",
-    summary:
-      "Southern section of the national electrified double track. Resident engineering on behalf of the main contractor's consultant team.",
-    scope: [
-      "Site supervision and daily progress verification",
-      "Inspection and test plan administration",
-      "Site correspondence and meeting representation",
-      "Quality records and as-built documentation",
-    ],
-  },
-  {
-    slug: "kvmrt-lrt",
-    title: "KVMRT Line 1 & LRT Ampang Line Extension",
-    category: "Rail & Transit",
-    kind: "experience",
-    role: "Senior Site Design & System Interface Engineer",
-    location: "Klang Valley",
-    summary:
-      "Urban rail transit expansion in the Klang Valley. Site design coordination and management of system interfaces between civil, station and railway system packages.",
-    scope: [
-      "System interface management between contract packages",
-      "Site design coordination and clarification",
-      "Interface issue tracking and close-out",
-      "Coordination with designers, contractors and operator",
-    ],
-  },
-  {
-    slug: "civil-tender",
-    title: "Infrastructure Civil Works — Tender Submission",
-    category: "Civil & Structural",
-    kind: "engagement",
-    role: "Tender Support Package",
-    location: "Klang Valley & Selangor",
-    summary:
-      "Pre-contract support for a contractor bidding a road and drainage package: from site visit to a complete, compliant submission on the closing date.",
-    scope: [
-      "Site visit inspection and constraint record",
-      "BOQ checking against drawings and specification",
-      "Method statement and work programme preparation",
-      "Tender compilation and clarification responses",
-    ],
-  },
-  {
-    slug: "structural-claims",
-    title: "Building Structural Works — Progress & Claims",
-    category: "Civil & Structural",
-    kind: "engagement",
-    role: "Project Support Package",
-    location: "Klang Valley & Selangor",
-    summary:
-      "Monthly construction-phase support for a structural sub-contractor, keeping valuations aligned with work completed on site.",
-    scope: [
-      "Monthly progress report with photo records",
-      "Interim Progress Claim (AIP) preparation",
-      "Variation Order register and submissions",
-      "Inspection request and QA/QC checklist control",
-    ],
-  },
-  {
-    slug: "mne-qaqc",
-    title: "M&E Services Installation — QA/QC & Approvals",
-    category: "M&E Building Services",
-    kind: "engagement",
-    role: "Technical & QA/QC Management",
-    location: "Klang Valley & Selangor",
-    summary:
-      "Technical submission support for an electrical and ACMV installation package, reducing rejection and resubmission cycles with the consultant.",
-    scope: [
-      "Material Approval Request (MAR) compilation",
-      "Method statements for installation activities",
-      "Inspection checklists and defect tracking",
-      "Testing & Commissioning documentation",
-    ],
-  },
-  {
-    slug: "mne-handover",
-    title: "Building Services — Handover Dossier",
-    category: "M&E Building Services",
-    kind: "engagement",
-    role: "Documentation & Close-Out",
-    location: "Klang Valley & Selangor",
-    summary:
-      "Close-out support to assemble a complete handover package ahead of practical completion and retention release.",
-    scope: [
-      "T&C records compilation and verification",
-      "As-built drawing register and coordination",
-      "O&M manual and warranty compilation",
-      "Final handover dossier submission",
-    ],
-  },
-  {
-    slug: "utilities-eot",
-    title: "Utility Network Works — EOT & Correspondence",
-    category: "Energy & Utilities",
-    kind: "engagement",
-    role: "Project Support Package",
-    location: "Greater Selangor",
-    summary:
-      "Contract administration support for a water reticulation package affected by third-party utility conflicts and access delays.",
-    scope: [
-      "Delay event register and supporting records",
-      "Extension of Time (EOT) submission preparation",
-      "Formal correspondence with the S.O. and client",
-      "Site meeting minutes verification",
-    ],
-  },
-  {
-    slug: "energy-pmc",
-    title: "LV Distribution & Substation Works — Full PMC",
-    category: "Energy & Utilities",
-    kind: "engagement",
-    role: "Full PMC Turnkey Package",
-    location: "Peninsular Malaysia",
-    summary:
-      "End-to-end project management support for a power distribution package, from tender stage through to final account.",
-    scope: [
-      "Tender preparation and technical clarifications",
-      "Programme, progress and claim management",
-      "Interface coordination with utility authority",
-      "T&C, handover and final account closing",
-    ],
-  },
-];
