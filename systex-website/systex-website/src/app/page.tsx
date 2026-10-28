@@ -8,9 +8,8 @@ import { WhatsAppIcon } from "@/components/ui/Icons";
 import { StatsBar } from "@/components/sections/StatsBar";
 import { ReasonsGrid } from "@/components/sections/ReasonsGrid";
 import { IndustriesGrid } from "@/components/sections/IndustriesGrid";
-import { ProjectCard } from "@/components/sections/ProjectCard";
 import { CtaBand } from "@/components/sections/CtaBand";
-import { disciplines, projects, serviceAreas } from "@/lib/content";
+import { disciplines, serviceAreas } from "@/lib/content";
 import { site, whatsappLink } from "@/lib/site";
 
 const lifecycle = [
@@ -21,7 +20,6 @@ const lifecycle = [
 ];
 
 export default function HomePage() {
-  const featured = projects.filter((p) => p.kind === "experience").slice(0, 3);
 
   return (
     <>
@@ -130,7 +128,7 @@ export default function HomePage() {
             id="services-title"
             eyebrow="Core Services"
             title="Support across the full project lifecycle."
-            intro="Engage us for a single deliverable or an entire workstream. Every engagement starts with an agreed scope, deliverables and timeline."
+            intro="Engage Systex for a single deliverable or an agreed workstream. Every engagement starts with an agreed scope, deliverables and timeline."
           />
           <ButtonLink href="/services" variant="outline" className="shrink-0">
             All Services
@@ -187,28 +185,6 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* -------------------------- FEATURED PROJECTS ----------------------- */}
-      <Section tone="muted" labelledBy="projects-title">
-        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <SectionHeading
-            id="projects-title"
-            eyebrow="Featured Experience"
-            title="Governance proven on Malaysia's major infrastructure."
-            intro="Selected project leadership of our Managing Director in prior roles — the same discipline in scope, programme and quality control that Systex brings to every engagement."
-          />
-          <ButtonLink href="/projects" variant="outline" className="shrink-0">
-            View Projects
-          </ButtonLink>
-        </div>
-        <ul className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {featured.map((p) => (
-            <li key={p.slug}>
-              <ProjectCard project={p} compact />
-            </li>
-          ))}
-        </ul>
-      </Section>
-
       {/* ------------------------------ INDUSTRIES -------------------------- */}
       <Section tone="dark" labelledBy="industries-title" className="relative overflow-hidden">
         <SectionHeading
@@ -216,7 +192,7 @@ export default function HomePage() {
           dark
           eyebrow="Client Industries Served"
           title="Supporting contractors across Malaysia's built environment."
-          intro="Our clients are CIDB-graded G1–G4 contractors delivering packages in these sectors."
+          intro="We focus on supporting G1–G4 contractors working across these sectors."
         />
         <div className="mt-14">
           <IndustriesGrid />
