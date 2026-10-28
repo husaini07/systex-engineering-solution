@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { nav, site, whatsappLink } from "@/lib/site";
 import { serviceAreas } from "@/lib/content";
-import { WhatsAppIcon, socialIcons } from "@/components/ui/Icons";
+import { WhatsAppIcon } from "@/components/ui/Icons";
 import { Logo } from "./Logo";
 
 export function Footer() {
@@ -23,22 +23,6 @@ export function Footer() {
           <p className="mt-6 font-display text-xs font-semibold uppercase tracking-[0.25em] text-gold-400">
             {site.tagline}
           </p>
-          <ul className="mt-6 flex gap-3" aria-label="Social media">
-            {site.social.map((s) => {
-              const Icon = socialIcons[s.icon];
-              return (
-                <li key={s.label}>
-                  <a
-                    href={s.href}
-                    aria-label={`${site.shortName} on ${s.label}`}
-                    className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 text-ink-300 transition-colors hover:border-gold-400 hover:text-white"
-                  >
-                    <Icon className="h-4 w-4" />
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
         </div>
 
         <nav aria-label="Quick links" className="lg:col-span-2">
