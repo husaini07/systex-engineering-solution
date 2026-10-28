@@ -70,7 +70,7 @@ export default function ServicesPage() {
         crumb="Services"
         path="/services"
         eyebrow="Project Management"
-        title="Project management that protects your programme, quality and cash flow."
+        title="Practical project management and documentation support."
         intro="Outsourced PMC support for G1–G4 contractors — tender readiness, project controls, QA/QC documentation and close-out — delivered against an agreed scope."
       />
 
@@ -148,8 +148,8 @@ export default function ServicesPage() {
           id="workflow-title"
           dark
           eyebrow="How We Work"
-          title="A controlled six-step workflow."
-          intro="Every engagement follows the same sequence, so compliance gaps are found before a consultant finds them."
+          title="Our proposed six-step workflow."
+          intro="A structured approach tailored to the agreed scope, deliverables and project requirements."
         />
         <div className="mt-14">
           <Workflow dark />
@@ -183,7 +183,7 @@ export default function ServicesPage() {
             >
               {p.featured && (
                 <span className="absolute -top-3 left-8 rounded-full bg-gold-500 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-950">
-                  Most requested
+                  Featured package
                 </span>
               )}
               <p className={`text-xs font-semibold uppercase tracking-wider ${p.featured ? "text-brand-200" : "text-ink-500"}`}>
