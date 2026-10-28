@@ -5,7 +5,7 @@ import { CtaBand } from "@/components/sections/CtaBand";
 import { StatsBar } from "@/components/sections/StatsBar";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { challenges, credentials, disciplines, governance, projects, serviceAreas, values } from "@/lib/content";
+import { challenges, credentials, disciplines, governance, directorExperience, serviceAreas, values } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 import logo from "../../../public/images/systex-logo.png";
@@ -18,7 +18,7 @@ export const metadata = pageMetadata({
 });
 
 export default function AboutPage() {
-  const experience = projects.filter((p) => p.kind === "experience");
+  const experience = directorExperience;
 
   return (
     <>
@@ -146,12 +146,15 @@ export default function AboutPage() {
         />
         <div className="mt-14 grid gap-10 rounded-2xl border border-ink-200 p-6 sm:p-10 grid-cols-1 lg:grid-cols-[320px_1fr]">
           <div>
-            <div
-              className="flex aspect-[4/5] items-center justify-center rounded-xl bg-gradient-to-br from-brand-800 to-brand-950"
-              role="img"
-              aria-label={`Portrait placeholder for ${site.director.name}`}
-            >
-              <span className="font-display text-6xl font-extrabold tracking-wider text-white/90">MH</span>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-ink-100">
+              <Image
+                src="/images/IMG-20260923-WA0017.jpg"
+                alt="Portrait of the Managing Director of Systex Engineering Solutions"
+                fill
+                sizes="(min-width: 1024px) 320px, (min-width: 640px) 320px, 100vw"
+                className="object-cover object-top"
+                priority
+              />
             </div>
             <ul className="mt-6 grid grid-cols-2 gap-3">
               {credentials.map((c) => (
@@ -175,11 +178,12 @@ export default function AboutPage() {
               contractors.
             </p>
             <h4 className="mt-10 text-xs font-semibold uppercase tracking-wider text-ink-500">
-              Selected project leadership &amp; governance experience
+              Selected professional experience in previous appointments
             </h4>
+            <p className="mt-3 text-sm text-ink-600">The experience below belongs to the Managing Director through previous professional employment, and does not represent projects contracted or delivered by Systex Engineering Solutions. Details are based on the MD curriculum vitae.</p>
             <ul className="mt-4 divide-y divide-ink-200 border-y border-ink-200">
               {experience.map((e) => (
-                <li key={e.slug} className="grid gap-1 py-4 sm:grid-cols-[1fr_1.2fr] sm:gap-6">
+                <li key={e.title} className="grid gap-1 py-4 sm:grid-cols-[1fr_1.2fr] sm:gap-6">
                   <p className="font-semibold text-ink-900">{e.title}</p>
                   <p className="text-sm text-ink-600">{e.role}</p>
                 </li>
